@@ -229,54 +229,50 @@
         <h2 class="small">Why Clients <strong>Love Us</strong></h2>
         
     	<div id="owl-demo2" class="owl-carousel small">
-    
-            <div>
-            
-            <img src="http://placehold.it/116x126" alt="" />
-                
-                <p><strong>Lorem that more</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Ricky Holness, <em>additional info</em></b>
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
-            
-            <div>
-                <img src="http://placehold.it/116x126" alt="" />
-            
-            	<p><strong>Lorem that more</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Ricky Holness, <em>additional info</em></b>
-                
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
-            
-            <div>
-                <img src="http://placehold.it/116x126" alt="" /> 
 
-            	<p><strong>Lorem that more</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
+            <?php
+
+
+                $args = array(
+                    'post_type' => 'ri_testimonials',
+                    'posts_per_page' => -1,
+                );
                 
-                <b>- Ricky Holness, <em>additional info</em></b>
+                $testimonials = new WP_Query( $args );
                 
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
+                if ( $testimonials->have_posts() ) {
+                    while ( $testimonials->have_posts() ) {
+                        $testimonials->the_post(); 
+
+                        $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                        $content = get_the_content();
+                        $title = get_the_title(); 
+
+                        ?>
+                             
+    
+                            <div>
             
-            <div>
-            
-            	<img src="http://placehold.it/116x126" alt="" />
+                            <img src="<?php echo $url ?>" alt="" />
+                                
+                                <p><?php echo $content; ?></p>
+                                
+                                <b>- <?php echo $title ?></b>
+                                
+                                <div class="divider_line21 last"></div>
+                                
+                            </div><!-- end section -->
+                    
+                        
+                        <?php
+                    }
+                } else {
+
+                }
+                wp_reset_postdata();
                 
-                <p><strong>Lorem that more</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Ricky Holness, <em>additional info</em></b>
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
+
+            ?>
             
 		</div>
     </div><!-- end all section -->
@@ -364,118 +360,50 @@
     <div id="grid-container" class="cbp-l-grid-fullScreen smallthu">
     
         <ul>
-        
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-briefcase"></i> <br /> <strong>Business &amp; Financial</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+
+            <?php 
+
+            $args = array(
+                'post_type' => 'ri_areas',
+                'posts_per_page' => -1,
+                'order' => 'ASC'
+            );
             
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-home"></i> <br /> <strong>Real Estate &amp; Land</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+            $areas = new WP_Query( $args );
             
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-medkit"></i> <br /> <strong>Medical Malpractice</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+            if ( $areas->have_posts() ) {
+                while ( $areas->have_posts() ) {
+                    $areas->the_post();
             
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-car"></i> <br /> <strong>Vehicle Accidents</strong></div>
+                    $title = get_the_title(); 
+                    $permalink = get_the_permalink();
+                    $icon = get_field('ri_areas_icon', get_the_ID());
+
+                    ?>
+
+                     <li class="cbp-item">
+                        <a href="<?php echo $permalink; ?>" class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
                             </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignLeft">
+                                    <div class="cbp-l-caption-body">
+                                        <div class="cbp-l-caption-title"><i class="fa fa-<?php echo $icon ?>"></i> <br /> <strong><?php echo $title; ?></strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <?php
             
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-users"></i> <br /> <strong>Family Law</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-edit"></i> <br /> <strong>Premises Liability</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-money"></i> <br /> <strong>Business &amp; Tax</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-university"></i> <br /> <strong>Other Cases</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+                }
+            } else {
+
+            }
+            wp_reset_postdata();
+
+            ?>
                
         </ul>
     </div>
