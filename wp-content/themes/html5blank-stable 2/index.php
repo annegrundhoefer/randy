@@ -8,107 +8,81 @@
 <!-- masterslider -->
 <div class="master-slider ms-skin-default" id="masterslider">
 
-    <!-- slide -->
-   	<div class="ms-slide slide-1" data-delay="7">
-         
-        <!-- slide background -->
-        <img src="<?php bloginfo('template_url'); ?>/images/gavel.jpg" data-src="<?php bloginfo('template_url'); ?>/images/gavel.jpg" alt=""/>     
+    <?php 
+
+    $args = array(
+
+        'post_type' => 'ri_slides',
+        'posts_per_page' => -1
+
+    );
+
+    $slides = new WP_Query($args);
+
+    $count = 1;
+
+
+        if ( $slides->have_posts() ) {
+            while ( $slides->have_posts() ) {
+                $slides->the_post(); 
+
+                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                $title = get_the_title();
+                $desc = get_the_content();
+                ?>
         
-         <img src="<?php bloginfo('template_url'); ?>/images/gavel.jpg" data-src="<?php bloginfo('template_url'); ?>/images/rrr.jpg" alt="" class="ms-layer"
-            style="bottom:0; right:120px"
-            data-effect="right(72)"
-            data-delay="0"
-            data-duration="300"
-            data-type="image"
-		/>
-        
-        <div class="ms-layer text1"
-        	style="left:116px; top:123px"
-            data-effect="bottom(50)"
-            data-duration="900"
-            data-delay="300"
-            data-ease="easeOutExpo"
-        >RELY ON <br /> EXPERIENCE</div>
-        
-        <div class="ms-layer text2"
-        	style="left:116px; top:305px"
-            data-effect="left(100)"
-            data-duration="2000"
-            data-delay="500"
-            data-ease="easeOutExpo"
-        >Board Certified in Criminal Defense <br>Former State District Judge <br> Former Chief Felony Prosecutor</div>
-         
-        <div class="ms-layer sldbut1"
-        	style="left:116px; top:455px"
-            data-effect="right(50)"
-            data-duration="2000"
-            data-delay="500"
-            data-ease="easeOutExpo"
-        ><a href="#">Learn More</a></div>
-                
-	</div><!-- end slide -->
     
-	
-    <!-- slide -->
-   	<div class="ms-slide slide-3" data-delay="7">
+                        <div class="ms-slide slide-<?php echo $count ?>" data-delay="7">
          
-        <!-- slide background -->
-        <img src="<?php bloginfo('template_url'); ?>/masterslider/blank.gif" data-src="<?php bloginfo('template_url'); ?>/images/scales.jpg" alt=""/>     
+                            <img src="<?php echo $url ?>" data-src="<?php echo $url ?>" alt="<?php echo $title ?>"/>     
+                            
+                             <img src="<?php echo $url ?>" data-src="<?php bloginfo('template_url'); ?>/images/rrr.jpg" alt="" class="ms-layer"
+                                style="bottom:0; right:120px"
+                                data-effect="right(72)"
+                                data-delay="0"
+                                data-duration="300"
+                                data-type="image"
+                            />
+                            
+                            <div class="ms-layer text1"
+                                style="left:116px; top:123px"
+                                data-effect="bottom(50)"
+                                data-duration="900"
+                                data-delay="300"
+                                data-ease="easeOutExpo"
+                            ><?php echo $title ?>
+                            </div>
+                            
+                            <div class="ms-layer text2"
+                                style="left:116px; top:305px"
+                                data-effect="left(100)"
+                                data-duration="2000"
+                                data-delay="500"
+                                data-ease="easeOutExpo"
+                            ><?php echo $desc ?></div>
+                             
+                            <div class="ms-layer sldbut1"
+                                style="left:116px; top:455px"
+                                data-effect="right(50)"
+                                data-duration="2000"
+                                data-delay="500"
+                                data-ease="easeOutExpo"
+                            ><a href="#">Learn More</a></div>
+                                    
+                        </div><!-- end slide -->
+
+
+                <?php 
         
-         
+                $count++;            
+            
+            }
+        } else {
+                // no posts found
+        }
+        wp_reset_postdata();
         
-        <div class="ms-layer text1 small"
-        	style="left:116px; top:113px"
-            data-effect="bottom(50)"
-            data-duration="900"
-            data-delay="600"
-            data-ease="easeOutExpo"
-        >Get <br /> confidential <br /> legal advice</div>
-        
-        <div class="ms-layer text2"
-        	style="left:116px; top:327px"
-            data-effect="left(100)"
-            data-duration="1600"
-            data-delay="1100"
-            data-ease="easeOutExpo"
-        >Over 30 years of experience working <br> to protect your rights</div>
-         
-        <div class="ms-layer sldbut1"
-        	style="left:116px; top:445px"
-            data-effect="right(50)"
-            data-duration="2000"
-            data-delay="1300"
-            data-ease="easeOutExpo"
-        ><a href="#">Learn More</a></div>
-                
-	</div><!-- end slide -->
-    
-    
-    
-    <!-- slide -->
-   	<div class="ms-slide slide-6" data-delay="7">
-         
-        <!-- slide background -->
-        <img src="<?php bloginfo('template_url'); ?>/masterslider/blank.gif" data-src="<?php bloginfo('template_url'); ?>/images/sky.jpg" alt=""/>     
-                
-        <div class="ms-layer text1 center"
-        	style="left:270px; top:163px"
-            data-effect="bottom(50)"
-            data-duration="500"
-            data-delay="0"
-            data-ease="easeOutExpo"
-        >Results You  CAN<br /> BELIEVE IN</div>
-          
-        <div class="ms-layer sldbut1"
-        	style="left:595px; top:435px"
-            data-effect="bottom(50)"
-            data-duration="2000"
-            data-delay="600"
-            data-ease="easeOutExpo"
-        ><a href="#">Get help Now</a></div>
-                
-	</div><!-- end slide -->
-    
+        ?>
 
 </div><!-- end of masterslider -->
 
@@ -116,16 +90,61 @@
 
 <div class="clearfix"></div>
 
+<?php 
+
+    /*********************************************/
+    /*         
+        Get Homepage Variable Text
+    */
+    /*********************************************/
+
+    $args = array(
+
+        'pagename' => 'homepage-text'
+
+    );
+
+    $text = new WP_Query($args);
+
+        if ( $text->have_posts() ) {
+            while ( $text->have_posts() ) {
+                $text->the_post(); 
+
+                $post_id = get_the_ID();
+
+                $main_text_title = get_field('main_text_title',$post_id);
+                $main_text_subhead = get_field('main_text_subhead',$post_id);
+                $main_text_body = get_field('main_text_body',$post_id);
+
+                $feature_red_word = get_field('feature_red_word',$post_id);
+                $feature_title = get_field('feature_title',$post_id);
+                $feature_subhead = get_field('feature_subhead',$post_id);
+                $feature_body = get_field('feature_body', $post_id);
+
+                $about_title = get_field('about_title',$post_id);
+                $about_body = get_field('about_body',$post_id);
+
+            
+            }
+        } else {
+                // no posts found
+        }
+        wp_reset_postdata();
+        
+?>
+
+
+
 <div class="feature_sec1">
 <div class="container">
 
     <div class="title11">
-    	<h2>Randall B. Isenberg - Dallas DWI Attorney
-        <em>Working to Protect Your Rights</em>
+    	<h2><?php echo $main_text_title ?>
+        <em><?php echo $main_text_subhead ?></em>
         <span class="line"></span></h2>
 	</div>
 	
-    <p>When it is time for your trial, you want to walk into the courtroom confident in the knowledge that you and your lawyer have explored every issue and prepared the best possible defense. At the Dallas Law Offices of Randall B. Isenberg, we provide state and federal criminal defense as well DWI defense for the accused throughout the Dallas Fort Worth area. We will put in the work needed to get the best possible results.</p>
+    <p><?php echo $main_text_body ?></p>
         
     <h5>Get your Free Consultation <strong class="animate" data-anim-type="fadeIn" data-anim-delay="300">(214) 696-9253 </strong> Available 24/7 </h5>
     
@@ -139,11 +158,11 @@
     
     <div class="box animate" data-anim-type="fadeInUp" data-anim-delay="500">
     
-        <h1>Your</h1>
-        <h3>Dallas legal advisor</h3>
-        <h5>over 30 years of experience ---</h5>
+        <h1><?php echo $feature_red_word ?></h1>
+        <h3><?php echo $feature_title; ?></h3>
+        <h5><?php echo $feature_subhead ?></h5>
         
-        <p>With more than 30 years of criminal defense experience in the state and federal courts of Texas, Attorney Randall B. Isenberg handles a wide range of felony and misdemeanor cases. He brings a unique perspective to every client's situation, having served as a former state district judge and as a senior chief felony prosecutor. He is Board Certified in Criminal Defense and is licensed by the United States Supreme Court to practice. Further, he is highly respected by the legal community, having received an AV Peer Review Rating* through Martindale-Hubbell.</p>
+        <p><?php echo $feature_body ?></p>
         
     </div>
 
@@ -160,9 +179,9 @@
     
         <img src="<?php bloginfo('template_url'); ?>/images/awards.png" alt="" class="img_left1 animate" data-anim-type="fadeInRight" data-anim-delay="500" />
         
-        <h2 class="small">About <strong>Randall</strong></h2>
+        <h2 class="small">About <strong><?php echo $about_title ?></strong></h2>
         
-        <p>Criminal defense attorney Randy Isenberg has been involved in criminal law for the past thirty years. With experience as both a Senior Chief Felony Prosecutor and a State District Trial Judge, he understands the entirety of the criminal law process. Board Certified in Criminal Defense by the Texas Board of Legal Specialization and a Certified Criminal Defense Advocate by the National Board of Trial Advocacy, he is listed in Martindale-Hubbell's Bar Register of Preeminent Lawyers and was selected for inclusion in the list of Texas Super Lawyers for the year 2006 printed in Texas Monthly Magazine, a Thomson Reuters service.</p>
+        <p><?php echo $about_body ?></p>
         <br />
         <span class="big_text1">Call Us Confidentially Now:</span> &nbsp;<span class="big_text1 color">(888) 123-456-7890</span>
         <br /><br />
@@ -467,109 +486,6 @@
     
 </div>
 </div><!-- end features section 2 -->
-
-
-
-<div class="clearfix"></div>
-
-<div class="feature_sec8">
-<div class="container">
-	
-    <div class="one_half">
-    	
-        <h2 class="small2">Recent <strong>Blogs</strong></h2>
-        
-    	<div id="owl-demo4" class="owl-carousel small two">
-    
-            <div>
-            
-            	<div class="left">
-                	<a href="#"><img src="http://placehold.it/100x100" alt="" /></a>
-                    <div class="date"><a href="#"><strong>27</strong> NOV</a></div>
-                    <div class="comment"><a href="#"><i class="fa fa-comments fa-2x"></i>&nbsp; 257</a></div>
-				</div><!-- end left -->
-                
-                <div class="right">
-					<div class="big_text2"><a href="#">There are many variations passages desktop lorem Ipsum available.</a></div>
-					<br />
-					<p>But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet to repeat predefined chunks as necessary, making this the first true generator on the normal distribution Internet.</p>
-				</div><!-- end right -->
-                
-			</div><!-- end section -->
-            
-            <div>
-            
-            	<div class="left">
-                	<a href="#"><img src="http://placehold.it/100x100" alt="" /></a>
-                    <div class="date"><a href="#"><strong>26</strong> NOV</a></div>
-                    <div class="comment"><a href="#"><i class="fa fa-comments fa-2x"></i>&nbsp; 158</a></div>
-				</div><!-- end left -->
-                
-                <div class="right">
-					<div class="big_text2"><a href="#">Many web sites still in their infancy versions have evolved over the years.</a></div>
-					<br />
-					<p>But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet to repeat predefined chunks as necessary, making this the first true generator on the normal distribution Internet.</p>
-				</div><!-- end right -->
-                
-			</div><!-- end section -->
-            
-            <div>
-            
-            	<div class="left">
-                	<a href="#"><img src="http://placehold.it/100x100" alt="" /></a>
-                    <div class="date"><a href="#"><strong>25</strong> NOV</a></div>
-                    <div class="comment"><a href="#"><i class="fa fa-comments fa-2x"></i>&nbsp; 450</a></div>
-				</div><!-- end left -->
-                
-                <div class="right">
-					<div class="big_text2"><a href="#">Publishing packages and web page editors now use as their default model text.</a></div>
-					<br />
-					<p>But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet to repeat predefined chunks as necessary, making this the first true generator on the normal distribution Internet.</p>
-				</div><!-- end right -->
-                
-			</div><!-- end section -->
-            
-            <div>
-            
-            	<div class="left">
-                	<a href="#"><img src="http://placehold.it/100x100" alt="" /></a>
-                    <div class="date"><a href="#"><strong>24</strong> NOV</a></div>
-                    <div class="comment"><a href="#"><i class="fa fa-comments fa-2x"></i>&nbsp; 106</a></div>
-				</div><!-- end left -->
-                
-                <div class="right">
-					<div class="big_text2"><a href="#">Generate lorem the which looks reasonable lorem ipsum therefore always free.</a></div>
-					<br />
-					<p>But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet to repeat predefined chunks as necessary, making this the first true generator on the normal distribution Internet.</p>
-				</div><!-- end right -->
-                
-			</div><!-- end section -->
-
-   		</div>
-
-	</div><!-- end all section -->
-    
-    <div class="one_half last">
-    	
-        <h2 class="small2">Our <strong>Videos</strong></h2>
-        
-        <div id="owl-demo5" class="owl-carousel small two">
-        	
-        	<div><iframe src="http://www.youtube.com/embed/03M7n8bMscM?wmode=transparent" class="videofra"></iframe></div>
-            
-            <div><iframe src="http://www.youtube.com/embed/pH7cvIiuRg8?wmode=transparent" class="videofra"></iframe></div>
-            
-            <div><iframe src="http://www.youtube.com/embed/VT_3xtI2kvM?wmode=transparent" class="videofra"></iframe></div>
-            
-            <div><iframe src="http://www.youtube.com/embed/R55e-uHQna0?wmode=transparent" class="videofra"></iframe></div>
-             
-        </div><!-- end section -->
-        
-    </div><!-- end all section -->
-
-</div>
-</div><!-- end features section 8 -->
-
 
 
 <div class="clearfix"></div>
