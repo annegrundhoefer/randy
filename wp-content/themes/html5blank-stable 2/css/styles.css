@@ -1460,10 +1460,10 @@
   border-bottom: 1px solid #c3c3c3;
 }
 .full_biohead h3 {
-  color: #fff;
+  color: #000;
   font-weight: bold;
   margin-top: 70px;
-  margin-bottom: 3px;
+  margin-bottom: 13px;
 }
 .full_biohead h6 {
   color: #999;
