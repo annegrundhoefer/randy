@@ -81,20 +81,59 @@
         <div class="container">
         	
             <div class="left">
+
+                <?php 
+
+                    /*********************************************/
+                    /*         
+                        Get Homepage Variable Text
+                    */
+                    /*********************************************/
+
+                    $args = array(
+
+                        'pagename' => 'homepage-text'
+
+                    );
+
+                    $text = new WP_Query($args);
+
+                        if ( $text->have_posts() ) {
+                            while ( $text->have_posts() ) {
+                                $text->the_post(); 
+
+                                $post_id = get_the_ID();
+
+                                $facebook = get_field('facebook',$post_id);
+                                $twitter = get_field('twitter',$post_id);
+                                $google_plus = get_field('google_plus',$post_id);
+                                $youtube = get_field('youtube',$post_id);
+                                $rss = get_field('rss',$post_id);
+
+                                $contact_phone_number = get_field('contact_phone_number',$post_id);
+                                $contact_email = get_field('contact_email',$post_id);
+
+                            }
+                        } else {
+                                // no posts found
+                        }
+                        wp_reset_postdata();
+                        
+                ?>
             
             	<ul class="topsocial">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="<?php echo $facebook ?>"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="<?php echo $twitter ?>"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="<?php echo $google_plus ?>"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="<?php echo $youtube ?>"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="<?php echo $rss ?>"><i class="fa fa-rss"></i></a></li>
                 </ul>
             
             </div><!-- end left links -->
             
             <div class="right">
                 
-                Call Us: <strong>(214) 696-9253</strong>       Email: <a href="mailto:info@website.com">info@website.com</a>
+                Call Us: <strong><?php echo $contact_phone_number ?></strong>       Email: <a href="mailto:<?php echo $contact_email ?>"><?php echo $contact_email ?></a>
                 
             <div class="topsitesearch">
                 <form method="get" id="topsitesearchform" action="index.html">
@@ -123,7 +162,7 @@
      <div class="container">
     
 		<!-- Logo -->
-		<div class="logo"><a href="index.html" id="logo"></a></div>
+		<div class="logo"><a href="/" id="logo"></a></div>
 		
 	<!-- Navigation Menu -->
 	<nav class="menu_main">

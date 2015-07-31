@@ -124,6 +124,7 @@
                 $about_title = get_field('about_title',$post_id);
                 $about_body = get_field('about_body',$post_id);
 
+                $contact_phone_number = get_field('contact_phone_number',$post_id);
             
             }
         } else {
@@ -146,7 +147,7 @@
 	
     <p><?php echo $main_text_body ?></p>
         
-    <h5>Get your Free Consultation <strong class="animate" data-anim-type="fadeIn" data-anim-delay="300">(214) 696-9253 </strong> Available 24/7 </h5>
+    <h5>Get your Free Consultation <strong class="animate" data-anim-type="fadeIn" data-anim-delay="300"><?php echo $contact_phone_number ?> </strong> Available 24/7 </h5>
     
 </div>
 </div><!-- end features section 1 -->
@@ -183,7 +184,7 @@
         
         <p><?php echo $about_body ?></p>
         <br />
-        <span class="big_text1">Call Us Confidentially Now:</span> &nbsp;<span class="big_text1 color">(888) 123-456-7890</span>
+        <span class="big_text1">Call Us Confidentially Now:</span> &nbsp;<span class="big_text1 color"><?php echo $contact_phone_number ?></span>
         <br /><br />
         <div class="alicent"><img src="<?php bloginfo('template_url'); ?>/images/h-line10.png" alt="" /> <br /><br /> <div class="scriptfont">Randall Isenberg</div></div>
 
@@ -196,19 +197,42 @@
         <div class="caseresult">
             <div class="inborder">
             
-            <p><span class="big_text1">$4.9 billion</span> in verdicts and settlements over 35 years. Does not reflect adjustments for fees, costs, or medical liens.</p>
+
+            <?php 
+
+
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'order' => 'DESC'
+            );
             
-            <div class="divider_line22"></div>
+            $results = new WP_Query( $args );
             
-            <p><span class="big_text1">$1 Million</span> Settlement; School Student Suffers Brain Injury in Truck-Auto Crash.</p>
+            if ( $results->have_posts() ) {
+                while ( $results->have_posts() ) {
+                    $results->the_post();
             
-            <div class="divider_line22"></div>
+                    ?>
+
+                    <p><?php echo get_the_excerpt() ?></p>
+                
+                    <div class="divider_line22"></div>
+
+                    <?php 
             
-            <p><span class="big_text1">$3.75 Million</span> Undue Influence to Disabled Woman in her Estate Trust Decisions Results in Settlement.</p>
+                }
+            } else {
+                    // no posts found
+            }
+            wp_reset_postdata();
+            
+            ?>
+            
             
             <br /><br />
             
-            <a href="#" class="button4"><strong>All Cases &amp; Results</strong></a>
+            <a href="/results" class="button4"><strong>All Cases &amp; Results</strong></a>
             
             </div>
         </div>
@@ -410,73 +434,6 @@
     
 </div>
 </div><!-- end features section 2 -->
-
-
-<div class="clearfix"></div>
-
-<div class="feature_sec9">
-<div class="container transpef">
-	
-    <div class="title11">
-    	<h2 class="white">Need Legal Assistance - Do You Have a Claim?
-        <em>Feel free to get in touch with any enquiries and one of our friendly members of staff will get back to you as soon as possible.</em>
-        </h2>
-	</div>
-    
-    <div class="cforms animate" data-anim-type="fadeIn" data-anim-delay="500">
-        
-        <form action="demo-contacts.php" method="post" id="sky-form" class="sky-form">
-          <fieldset>
-            <div class="row">
-            
-              <div class="col col-4">
-                <label class="label"><strong>Your Name*</strong></label>
-                <label class="input"> <i class="icon-append icon-user"></i>
-                  <input type="text" name="name" id="name">
-                </label>
-              </div>
-              
-              <div class="col col-4">
-                <label class="label"><strong>Your E-mail*</strong></label>
-                <label class="input"> <i class="icon-append icon-envelope-alt"></i>
-                  <input type="email" name="email" id="email">
-                </label>
-              </div>
-            
-                        
-            <div class="col col-4">
-              <label class="label"><strong>Phone Number</strong></label>
-              <label class="input"> <i class="icon-append icon-tag"></i>
-                <input type="text" name="subject" id="subject">
-              </label>
-            </div>
-            
-            </div>
-  			
-            <br />
-             
-            <div>
-              <label class="label"><strong>Message*</strong></label>
-              <label class="textarea"> <i class="icon-append icon-comment"></i>
-                <textarea rows="5" name="message" id="message"></textarea>
-              </label>
-            </div>
-            
-          </fieldset>
-          <footer>
-            <button type="submit" class="subbutton">Submit Your Message</button>
-          </footer>
-          <div class="message"> <i class="icon-ok"></i>
-            <p>Your message was successfully sent!</p>
-          </div>
-        </form>
-        
-	</div>
-    
-	<div class="clearfix margin_top4"></div>
-    
-</div>
-</div><!-- end features section 9 -->
 
 <div class="clearfix"></div>
 

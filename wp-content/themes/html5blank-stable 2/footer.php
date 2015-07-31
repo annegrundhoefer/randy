@@ -1,3 +1,107 @@
+<?php 
+
+    /*********************************************/
+    /*         
+        Get Homepage Variable Text
+    */
+    /*********************************************/
+
+    $args = array(
+
+        'pagename' => 'homepage-text'
+
+    );
+
+    $text = new WP_Query($args);
+
+        if ( $text->have_posts() ) {
+            while ( $text->have_posts() ) {
+                $text->the_post(); 
+
+                $post_id = get_the_ID();
+
+                $footer_header = get_field('footer_header',$post_id);
+                $footer_subhead = get_field('footer_subhead',$post_id);
+
+                $contact_phone_number = get_field('contact_phone_number',$post_id);
+                $contact_fax_number = get_field('contact_fax_number',$post_id);
+                $contact_address = get_field('contact_address',$post_id);
+                $contact_email = get_field('contact_email', $post_id);
+
+
+            
+            }
+        } else {
+                // no posts found
+        }
+        wp_reset_postdata();
+        
+?>
+
+<div class="feature_sec9">
+<div class="container transpef">
+	
+    <div class="title11">
+    	<h2 class="white"><?php echo $footer_header ?>
+        <em><?php echo $footer_subhead ?></em>
+        </h2>
+	</div>
+    
+    <div class="cforms">
+        
+        <form action="demo-contacts.php" method="post" id="sky-form" class="sky-form">
+          <fieldset>
+            <div class="row">
+            
+              <div class="col col-4">
+                <label class="label"><strong>Your Name*</strong></label>
+                <label class="input"> <i class="icon-append icon-user"></i>
+                  <input type="text" name="name" id="name">
+                </label>
+              </div>
+              
+              <div class="col col-4">
+                <label class="label"><strong>Your E-mail*</strong></label>
+                <label class="input"> <i class="icon-append icon-envelope-alt"></i>
+                  <input type="email" name="email" id="email">
+                </label>
+              </div>
+            
+                        
+            <div class="col col-4">
+              <label class="label"><strong>Phone Number</strong></label>
+              <label class="input"> <i class="icon-append icon-tag"></i>
+                <input type="text" name="subject" id="subject">
+              </label>
+            </div>
+            
+            </div>
+  			
+            <br />
+             
+            <div>
+              <label class="label"><strong>Message*</strong></label>
+              <label class="textarea"> <i class="icon-append icon-comment"></i>
+                <textarea rows="5" name="message" id="message"></textarea>
+              </label>
+            </div>
+            
+          </fieldset>
+          <footer>
+            <button type="submit" class="subbutton">Submit Your Message</button>
+          </footer>
+          <div class="message"> <i class="icon-ok"></i>
+            <p>Your message was successfully sent!</p>
+          </div>
+        </form>
+        
+	</div>
+    
+	<div class="clearfix margin_top4"></div>
+    
+</div>
+</div><!-- end features section 9 -->
+
 <footer>
 
 <div class="footer">
@@ -8,7 +112,7 @@
         
             <h5>Get Free Consultation</h5>
             <h6>Available 24/7</h6>
-            <h3>(214) 696-9253</h3>
+            <h3><?php echo $contact_phone_number ?></h3>
             
         </div><!-- end section -->
         
@@ -16,14 +120,14 @@
         
             <h5>Message Us Now</h5>
             <h6>Available 24/7</h6>
-            <h3><a href="mailto:info@website.com">info@website.com</a></h3>
+            <h3><a href="mailto:<?php echo $contact_email ?>"><?php echo $contact_email ?></a></h3>
         
         </div><!-- end section -->
         
         <div class="right animate" data-anim-type="fadeInRight" data-anim-delay="500">
         
             <h5>Address Location</h5>
-            <h6>4303 North Central Expressway Dallas, TX 75205  <br>Fax: (214) 696-0867 <br /> <a href="https://www.google.com/maps/dir//4303+N+Central+Expy,+Dallas,+TX+75205/@32.8175451,-96.7913839,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x864e9f26362c3f5f:0xcacfcd2cdbc51ba2!2m2!1d-96.7890718!2d32.8175451?hl=en-US ">View Map</a></h6>
+            <h6><?php echo $contact_address ?>  <br>Fax: <?php echo $contact_fax_number ?> <br /> <a href="https://www.google.com/maps/dir//4303+N+Central+Expy,+Dallas,+TX+75205/@32.8175451,-96.7913839,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x864e9f26362c3f5f:0xcacfcd2cdbc51ba2!2m2!1d-96.7890718!2d32.8175451?hl=en-US ">View Map</a></h6>
            
         </div><!-- end section -->
     
@@ -34,7 +138,7 @@
 <div class="copyrights">
 <div class="container">
 
-	<div class="one_half">Copyright © 2015 Law Offices of Randall B. Isenberg. All Rights Reserved</div>
+	<div class="one_half">Copyright © <?php echo the_date('Y'); ?> Law Offices of Randall B. Isenberg. All Rights Reserved</div>
 	
     <div class="one_half last"><a href="#">Notices</a> | <a href="#">Privacy Policy</a> | <a href="#">Careers</a> | <a href="#">Site Map</a></div>
     
