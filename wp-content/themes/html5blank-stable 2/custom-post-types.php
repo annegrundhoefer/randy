@@ -107,6 +107,42 @@
             'supports'              => array( 'title', 'page-attributes', 'thumbnail', 'editor', 'post_meta' ), 
          )
     );
+
+    //***************************************************************************
+    // Overviews
+    //***************************************************************************
+    register_post_type( 'ri_overviews',
+        array(
+            'labels' => array(
+                'name'                  => 'Overviews',
+                'singular_name'         => 'Overview',
+                'add_new'               => 'Add New',
+                'add_new_item'          => 'Add New Overview',
+                'edit_item'             => 'Edit Overview',
+                'new_item'              => 'New Overview',
+                'all_items'             => 'All Overviews',
+                'view_item'             => 'View Overview',
+                'search_items'          => 'Search Overviews',
+                'not_found'             => 'No overviews found',
+                'not_found_in_trash'    => 'No overviews found in trash',
+                'parent_item_colon'     => '',
+                'menu_name'             => 'Overviews'
+            ),
+            'public'                => true,
+            'publicly_queryable'    => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'query_var'             => true,
+            'rewrite'               => false,
+            'capability_type'       => 'post',
+            'has_archive'           => true,
+            'hierarchical'          => false,
+            'menu_position'         => null,
+            'taxonomies' => array('category'),
+            'menu_icon'             => 'dashicons-video-alt3',
+            'supports'              => array( 'title', 'page-attributes', 'thumbnail', 'editor', 'post_meta' ), 
+         )
+    );
 	
 
 

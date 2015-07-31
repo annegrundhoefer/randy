@@ -284,53 +284,49 @@
 
         <div id="owl-demo3" class="owl-carousel small">
     
-            <div>
+            <?php
+
+
+                $args = array(
+                    'post_type' => 'ri_testimonials',
+                    'posts_per_page' => -1,
+                );
+                
+                $testimonials = new WP_Query( $args );
+                
+                if ( $testimonials->have_posts() ) {
+                    while ( $testimonials->have_posts() ) {
+                        $testimonials->the_post(); 
+
+                        $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                        $content = get_the_content();
+                        $title = get_the_title(); 
+
+                        ?>
+                             
+    
+                            <div>
             
-            	<img src="http://placehold.it/116x126" alt="" />
+                            <img src="<?php echo $url ?>" alt="" />
+                                
+                                <p><?php echo $content; ?></p>
+                                
+                                <b>- <?php echo $title ?></b>
+                                
+                                <div class="divider_line21 last"></div>
+                                
+                            </div><!-- end section -->
+                    
+                        
+                        <?php
+                    }
+                } else {
+
+                }
+                wp_reset_postdata();
                 
-                <p><strong>Lorem that more</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Ricky Holness, <em>additional info</em></b>
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
-            
-            <div>
-            
-            	<img src="http://placehold.it/116x126" alt="" />
-                
-                <p><strong>Packages that</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Jean Desmond, <em>additional info</em></b>
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
-            
-            <div>
-            
-            	<img src="http://placehold.it/116x126" alt="" />
-                
-                <p><strong>Apposed to using</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Devin Braedon, <em>additional info</em></b>
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
-            
-            <div>
-            
-            	<img src="http://placehold.it/116x126" alt="" />
-                
-                <p><strong>Webpage editors</strong> less normal distribution of letters as opposed to using content here content making it look like readable english many web page editors now used model structure looks Ipsum always and a of model sentence structures to generate which looks.</p>
-                
-                <b>- Cason Harrison, <em>additional info</em></b>
-                
-                <div class="divider_line21 last"></div>
-                
-            </div><!-- end section -->
+
+            ?>
                
 		</div>
 	</div><!-- end all section -->

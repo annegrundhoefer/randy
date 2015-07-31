@@ -1,23 +1,43 @@
 <?php /* Template Name: Attorney Page */ get_header(); ?>
 
+<?php if (have_posts()): while (have_posts()) : the_post(); 
+
+
+$post_id = get_the_ID();
+
+$attorney_info_heading = get_field('attorney_info_heading',$post_id);
+$attorney_info_body = get_field('attorney_info_body',$post_id);
+$attorney_info_phone_number = get_field('attorney_info_phone_number',$post_id);
+$attorney_info_fax_number = get_field('attorney_info_fax_number',$post_id);
+$attorney_info_email = get_field('attorney_info_email',$post_id);
+$professional_experience_body = get_field('professional_experience_body',$post_id);
+$practice_areas_body = get_field('practice_areas_body',$post_id);
+$education_body = get_field('education_body',$post_id);
+$bar_admissions_body = get_field('bar_admissions_body',$post_id);
+$certifications_body = get_field('certifications_body',$post_id);
+$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+
+
+?>
+
 <div class="clearfix"></div>
 
 
 <div class="full_biohead">
 <div class="container">
 
-	<img src="http://placehold.it/450x400" alt="" />
+	<img src="<?php echo $url ?>" alt="" />
     
-	<h3>Meet Attorney Randy Isenberg</h3>
-    <h6>Board Certified in Criminal Defense <br>Former State District Judge <br> Former Chief Felony Prosecutor</h6>
+	<h3><?php echo $attorney_info_heading ?></h3>
+    <h6><?php echo $attorney_info_body ?></h6>
     
     <ul class="ctdet">
-    	<li><i class="fa fa-phone-square"></i> (888) 123-456-7890</li>
-        <li><i class="fa fa-fax"></i> (888) 123-456-7899</li>
-        <li><i class="fa fa-envelope"></i> <a href="mailto:info@websitename.com">info@websitename.com</a></li>
+    	<li><i class="fa fa-phone-square"></i> <?php echo $attorney_info_phone_number ?></li>
+        <li><i class="fa fa-fax"></i> <?php echo $attorney_info_fax_number ?></li>
+        <li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $attorney_info_email ?>"><?php echo $attorney_info_email ?></a></li>
     </ul>
     
-    <p><a href="#" class="button5">Download vCard</a> &nbsp;&nbsp; <a href="mailto:info@websitename.com" class="button5">Send an Email</a></p>
+    <p><a href="#" class="button5">Download vCard</a> &nbsp;&nbsp; <a href="<?php echo $attorney_info_email ?>" class="button5">Send an Email</a></p>
    	
     
     <ul class="csocial">
@@ -37,7 +57,7 @@
     
     <h3>Professional Experience</h3>
     
-    <p class="big_text3">As a former Senior Chief Felony Prosecutor and State District Trial Judge with 30 years of experience, attorney Randy Isenberg is listed in Martindale-Hubbell's Bar Register of Preeminent Lawyers and was selected for inclusion in the list of "Texas Super Lawyers" for the year 2006 printed in Texas Monthly Magazine a Thomson Reuters service, and selected for inclusion in the list as a Top Texas Lawyer in 2006 and 2007 by a Thomson Reuters service. He is also Board Certified in Criminal Defense by the Texas Board of Legal Specialization and is certified as a Criminal Defense Advocate by the National Board of Trial Advocacy (NBTA). Attorney Isenberg is also a regular TV commentator for local and regional criminal justice issues.</p>
+    <p class="big_text3"><?php echo $professional_experience_body ?></p>
 
     
     <div class="clearfix margin_top5"></div>
@@ -46,16 +66,34 @@
     <div class="graybgraph_box">
     	
         <h3>Practice Areas</h3>
-        
+
+
         <ul>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Driving While Intoxicated (DWI)</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">All Felony and Misdemeanor Cases</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Family Violence Assault</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Nursing Home Neglect</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Expunctions</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Occupational Drivers License</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Traffic Violations</a></li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> <a href="#">Criminal Appeals</a></li>
+
+            <?php
+
+
+            $args = array(
+                'post_type' => 'ri_areas',
+                'posts_per_page' => -1,
+                'order' => 'ASC'
+            );
+            
+            $areas = new WP_Query( $args );
+            
+            if ( $areas->have_posts() ) {
+                while ( $areas->have_posts() ) {
+                    $areas->the_post();
+            
+                    echo '<li><i class="fa fa-arrow-circle-o-right"></i> <a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+            
+                }
+            } else {
+                    // no posts found
+            }
+            wp_reset_postdata();
+            
+            ?>
         </ul>
 
 	</div>
@@ -66,10 +104,7 @@
     	
         <h3>Education</h3>
         
-        <ul>
-			<li><strong class="color">Law School:</strong> <br /> Georgia State University College of Law, J.D., 1995, Lead Articles Editor –  Georgia State University Law Review</li>
-            <li><br /><strong class="color">Undergraduate:</strong> <br /> University of Georgia, B.B.A. in Finance, 1992, Recipient: Alumni Scholarship</li>
-        </ul>
+        <?php echo $education_body ?>
 
 	</div>
     </div><!-- end section -->
@@ -79,16 +114,7 @@
     	
         <h3>Bar Admissions</h3>
         
-        <ul>
-            <li><i class="fa fa-arrow-circle-o-right"></i> District of Columbia</li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> Massachusetts</li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> California</li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> Florida</li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> The State Bar of Texas</li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> United States Tax Court</li>
-            <li><i class="fa fa-arrow-circle-o-right"></i> US Court of Federal Claims</li>
-        </ul>
-
+        <?php echo $bar_admissions_body ?>
 	</div>
     </div><!-- end all section -->
     
@@ -98,22 +124,7 @@
     
         <h3>Certifications &amp; Memberships</h3>
         
-        <ul class="list9">
-            <li><i class="fa fa-long-arrow-right"></i>State District Judge Dallas &amp; County Criminal Court Judge 1986-1990</li>
-            <li><i class="fa fa-long-arrow-right"></i>Assistant District Attorney/Chief Felony Prosecutor, Dallas 1980-1985</li>
-            <li><i class="fa fa-long-arrow-right"></i>Certified in Criminal Defense Law by the TX Board</li>
-            <li><i class="fa fa-long-arrow-right"></i>Certified by the Natl. Board of Trial Advocacy as a Criminal Advocate</li>
-            <li><i class="fa fa-long-arrow-right"></i>Selected for inclusion in the list for a Top Texas Lawyer '06 &'07</li>
-            <li><i class="fa fa-long-arrow-right"></i>Selected for inclusion in the list of Texas Super Lawyers '06</li>
-            <li><i class="fa fa-long-arrow-right"></i>AV® Peer Review Rating by Martindale-Hubble® - Highest Rating</li>
-            <li><i class="fa fa-long-arrow-right"></i>Licensed to practice law in front of the United States Supreme Court</li>
-            <li><i class="fa fa-long-arrow-right"></i>Member of the National College of DUI Defense</li>
-            <li><i class="fa fa-long-arrow-right"></i>Member of the American, Texas, Dallas &amp; Colorado Bar Associations</li>
-            <li><i class="fa fa-long-arrow-right"></i>Member of the State Bar Judiciary</li>
-            <li><i class="fa fa-long-arrow-right"></i>Licensed to practice law in the States of Texas &amp; Colorado</li>
-        
-
-        </ul>
+        <?php echo $certifications_body ?>
     
     </div><!-- end section -->
     
@@ -193,6 +204,18 @@
 
 <div class="clearfix"></div>
 
+ <?php endwhile; ?>
 
+<?php else: ?>
+<?php endif; ?>
+
+<style>
+
+.full_biohead img {
+    height: 450px;
+    width: 450px;
+}
+
+</style>
 
 <?php get_footer(); ?>

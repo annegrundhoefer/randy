@@ -20,126 +20,49 @@
     
         <ul>
         
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-briefcase"></i> <br /> Business &amp; Financial</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-home"></i> <br /> Real Estate &amp; Land</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-medkit"></i> <br /> Medical Malpractice</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-car"></i> <br /> Vehicle Accidents</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-users"></i> <br /> Family Law</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
-            
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
+            <?php 
 
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-edit"></i> <br /> Premises Liability</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+            $args = array(
+                'post_type' => 'ri_areas',
+                'posts_per_page' => -1,
+                'order' => 'ASC'
+            );
             
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-money"></i> <br /> Business &amp; Tax</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+            $areas = new WP_Query( $args );
             
-            <li class="cbp-item">
-                <a href="#" class="cbp-caption">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/280x210" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title"><i class="fa fa-university"></i> <br /> Other Cases</div>
+            if ( $areas->have_posts() ) {
+                while ( $areas->have_posts() ) {
+                    $areas->the_post();
+            
+                    $title = get_the_title(); 
+                    $permalink = get_the_permalink();
+                    $icon = get_field('ri_areas_icon', get_the_ID());
+
+                    ?>
+
+                     <li class="cbp-item">
+                        <a href="<?php echo $permalink; ?>" class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
                             </div>
-                        </div>
-                    </div>
-                </a>
-            </li><!-- end item -->
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignLeft">
+                                    <div class="cbp-l-caption-body">
+                                        <div class="cbp-l-caption-title"><i class="fa fa-<?php echo $icon ?>"></i> <br /> <strong><?php echo $title; ?></strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <?php
+            
+                }
+            } else {
+
+            }
+            wp_reset_postdata();
+
+            ?>
                
         </ul>
     </div>
