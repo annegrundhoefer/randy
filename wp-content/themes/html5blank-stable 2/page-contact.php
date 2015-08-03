@@ -7,7 +7,7 @@
 <div class="content_fullwidth less">
 
 <div class="one_full">
-	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Washington,+DC,+United+States&amp;aq=2&amp;oq=was&amp;sll=40.714353,-74.005973&amp;sspn=0.765069,1.674042&amp;ie=UTF8&amp;hq=&amp;hnear=Washington,+District+of+Columbia&amp;t=m&amp;z=11&amp;ll=38.907231,-77.036464&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Washington,+DC,+United+States&amp;aq=2&amp;oq=was&amp;sll=40.714353,-74.005973&amp;sspn=0.765069,1.674042&amp;ie=UTF8&amp;hq=&amp;hnear=Washington,+District+of+Columbia&amp;t=m&amp;z=11&amp;ll=38.907231,-77.036464" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4303%20North%20Central%20Expressway%2C%20Dallas%2C%20TX%2075205%2C%20United%20States&amp;key=AIzaSyD0nUVnQXWvQ387l6ZOktC0Y0SO5goPdg0"></iframe>
 </div><!-- end google map -->
 
 <div class="clearfix margin_top4"></div>

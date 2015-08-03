@@ -133,7 +133,7 @@
             
             <div class="right">
                 
-                Call Us: <strong><?php echo $contact_phone_number ?></strong>       Email: <a href="mailto:<?php echo $contact_email ?>"><?php echo $contact_email ?></a>
+                Call Us: <span class="red"><strong><?php echo $contact_phone_number ?></strong></span>       
                 
             <div class="topsitesearch">
                 <form method="get" id="topsitesearchform" action="index.html">

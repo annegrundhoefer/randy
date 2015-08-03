@@ -28,10 +28,10 @@
 	border-right: 1px solid #fff;
 }
 .tabs3 li a:hover {
-	color: #d70204;
+	color: #3183d7;
 }
 .tabs3 li.active a {
-	color: #d70204;
+	color: #3183d7;
 	border-bottom: 1px solid #fff;
 	background-color: #fff;
 }

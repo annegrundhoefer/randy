@@ -44,14 +44,14 @@
 	transition:  all 0.2s ease-in-out;
 }
 .st-accordion ul li > a:hover{
-    color: #d70204;
+    color: #3183d7;
 }
 .st-accordion ul li > a:hover span{
 	opacity:1;
 	top: 43px;
 }
 .st-accordion ul li.st-open > a{
-    color: #d70204;
+    color: #3183d7;
 }
 .st-accordion ul li.st-open > a span{
 	-webkit-transform:rotate(180deg);
@@ -187,7 +187,7 @@
 .st-accordion-four ul li > a{
 	font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-	color: #d70204;
+	color: #3183d7;
     display: block;
 	position: relative;
     line-height: 50px;
@@ -216,13 +216,13 @@
 	transition:  all 0.2s ease-in-out;
 }
 .st-accordion-four ul li > a:hover{
-    color: #d70204;
+    color: #3183d7;
 }
 .st-accordion-four ul li > a:hover span{
 	opacity:1;
 }
 .st-accordion-four ul li.st-open > a{
-    color: #d70204;
+    color: #3183d7;
 }
 .st-accordion-four ul li.st-open > a span{
 	background: transparent url(minus-color.png) no-repeat center center;

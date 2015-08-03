@@ -201,8 +201,11 @@
   float: left;
   width: 70%;
   color: #454545;
-  font-size: 13px;
+  font-size: 18px;
   text-align: right;
+}
+.top_nav .right span {
+  color: #3183d7;
 }
 .top_nav .right strong {
   margin-right: 20px;
@@ -296,7 +299,7 @@
   display: block;
 }
 .top_nav2 .right p strong {
-  color: #d70204;
+  color: #3183d7;
   font-size: 25px;
   font-weight: 600;
   display: block;
@@ -345,7 +348,7 @@
   margin-top: 10px;
 }
 .top_nav3 .right p strong {
-  color: #d70204;
+  color: #3183d7;
   font-size: 21px;
   font-weight: 600;
 }
@@ -389,7 +392,7 @@
   transition: all 0.3s ease;
 }
 .top_nav3 .right .smbut:hover {
-  background: #d70204;
+  background: #3183d7;
 }
 /* header area adinationals */
 .logo {
@@ -465,7 +468,7 @@
 .feature_sec1 h5 strong {
   color: #fff;
   font-size: 23px;
-  background: #d70204;
+  background: #3183d7;
   font-weight: normal;
   padding: 9px 18px;
   height: 44px;
@@ -522,7 +525,7 @@
   transition: all 0.2s ease-in-out;
 }
 .header-menu ul li :hover {
-  color: #e73537;
+  color: #3183d7;
 }
 /* features section 3 */
 .feature_sec3 {
@@ -708,7 +711,7 @@
   margin-bottom: 18px;
 }
 .feature_sec7 b {
-  color: #d70204;
+  color: #3183d7;
   font-weight: normal;
   display: block;
   margin-top: 20px;
@@ -731,7 +734,7 @@
 }
 .feature_sec7 a i:hover {
   color: #fff;
-  background: #d70204;
+  background: #3183d7;
 }
 .feature_sec7.two {
   background: #f4f4f4;
@@ -770,7 +773,7 @@
   color: #fff;
 }
 .feature_sec8 .date:hover {
-  background: #d70204;
+  background: #3183d7;
 }
 .feature_sec8 .date strong {
   font-size: 27px;
@@ -869,7 +872,7 @@
 }
 .feature_sec12 i {
   font-size: 40px;
-  color: #d70204;
+  color: #3183d7;
   margin-bottom: 16px;
 }
 .feature_sec12 h5 {
@@ -956,7 +959,7 @@
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
-  background: #d70204;
+  background: #3183d7;
   padding: 7px 18px;
   border-radius: 3px;
   transition: all 0.3s ease;
@@ -1079,7 +1082,7 @@
   background: rgba(0, 0, 0, 0.7);
 }
 .feature_sec18 .box h1 {
-  color: #d70204;
+  color: #3183d7;
   font-size: 58px;
   text-transform: uppercase;
   margin: 0px;
@@ -1201,7 +1204,7 @@
   float: left;
   width: 100%;
   padding: 30px 0px;
-  background: #d70204;
+  background: #3183d7;
 }
 .footer2 .fotcols h5 {
   color: #fff;
@@ -1412,7 +1415,7 @@
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 0px;
-  background: rgba(215, 2, 4, 0.9) url(../images/aroow3.png) no-repeat right 40px;
+  background: rgba(49, 131, 215, 0.9) url(../images/aroow3.png) no-repeat right 40px;
 }
 .page_title2 {
   float: left;
@@ -1460,10 +1463,10 @@
   border-bottom: 1px solid #c3c3c3;
 }
 .full_biohead h3 {
-  color: #000;
+  color: #fff;
   font-weight: bold;
   margin-top: 70px;
-  margin-bottom: 13px;
+  margin-bottom: 3px;
 }
 .full_biohead h6 {
   color: #999;
@@ -1487,7 +1490,7 @@
   transition: all 0.3s ease;
 }
 .full_biohead .ctdet li a:hover {
-  color: #d70204;
+  color: #3183d7;
 }
 .full_biohead ul.csocial {
   padding: 0px;
@@ -1573,7 +1576,7 @@
   display: block;
 }
 .blog_post h3 a {
-  color: #d70204;
+  color: #3183d7;
   text-decoration: none;
   margin-top: 3px;
   text-transform: none;
@@ -1706,7 +1709,7 @@ ul.post_meta_links_small {
   font-weight: normal;
 }
 .blog_post a.date:hover {
-  color: #d70204;
+  color: #3183d7;
 }
 .post_readmore:link,
 .post_readmore:visited {
@@ -1744,7 +1747,7 @@ ul.post_meta_links_small {
   float: left;
   border-radius: 2px;
   list-style-type: none;
-  background-color: #d70204;
+  background-color: #3183d7;
   transition: all 0.3s ease;
 }
 .sharepost li i {
@@ -1771,7 +1774,7 @@ ul.post_meta_links_small {
   color: #333;
 }
 .about_author a:hover {
-  color: #d70204;
+  color: #3183d7;
 }
 /* pagination */
 .pagination.center {
@@ -2062,7 +2065,7 @@ ul.adsbanner-list {
   margin-top: -10px;
 }
 .sidebar_widget ul.arrows_list1 li a {
-  color: #d70204;
+  color: #3183d7;
   line-height: 30px;
 }
 .sidebar_widget ul.arrows_list1 li a:hover {
@@ -2108,7 +2111,7 @@ ul.recent_posts_list {
   color: #999;
 }
 .recent_posts_list li a:hover {
-  color: #d70204;
+  color: #3183d7;
 }
 .recent_posts_list li span {
   float: left;
@@ -2232,7 +2235,7 @@ ul.recent_posts_list {
   display: block;
   font-size: 18px;
   line-height: 59px;
-  color: #d70204;
+  color: #3183d7;
   margin: 0;
   font-style: normal;
 }

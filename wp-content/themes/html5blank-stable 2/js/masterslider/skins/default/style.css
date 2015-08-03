@@ -47,7 +47,7 @@
 
 .ms-layer.sldbut1 a {
 	font-family: 'Droid Serif', serif;
-	background-color: rgba(215, 2, 4, 0.8);
+	background-color: rgba(49, 131, 215, 0.9);
 	padding: 13px 40px;
 	font-size: 18px;
 	font-weight: normal;
@@ -58,7 +58,7 @@
 }
 .ms-layer.sldbut1 a:hover {
 	background-color: #fff;
-	color: #d70204;
+	color: #3183d7;
 }
 
 .ms-layer.video-box.two {

@@ -1528,7 +1528,7 @@ input[type="button"].btn-block {
 .dropdown-menu>li>a:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #d70204;
+    background-color: #3183d7;
 	transition: all 0.3s ease;
 	
 }

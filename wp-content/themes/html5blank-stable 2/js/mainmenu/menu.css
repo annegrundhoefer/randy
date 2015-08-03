@@ -1,13 +1,13 @@
 ul.nav>li>a.active {
-	color:#d70204;
+	color:#3183d7;
 }
 
 ul.nav>li>a:hover.active {
-	color:#d70204;
+	color:#3183d7;
 }
 
 ul.nav>li>a:hover {
-	color:#d70204;
+	color:#3183d7;
 }
 
 ul.nav .dropdown li a.active i{
@@ -15,7 +15,7 @@ ul.nav .dropdown li a.active i{
 }
 ul.nav .dropdown li a.active {
 	color: #fff;
-	background: #d70204;
+	background: #3183d7;
 }
 ul.nav .dropdown li:hover a.active {
 	color: #fff;
@@ -358,7 +358,7 @@ margin-top: 104px;
         color: #fff ;
     }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
-        color: #d70204;
+        color: #3183d7;
         background-color: transparent;
          padding: 10px 20px;
         border-bottom: 0px ;

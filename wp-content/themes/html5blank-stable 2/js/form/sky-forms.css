@@ -379,7 +379,7 @@
 	text-decoration: none;
 	color: #fff;
 	cursor: pointer;
-	background: #d70204;
+	background: #3183d7;
 	transition: all 0.3s ease;
 }
 .sky-form .subbutton:hover {
@@ -1621,6 +1621,10 @@
 .sky-form .button {
 	background-color: #272727;
 	opacity: 0.8;
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Open Sans';
+	padding: 15px 15px;
 	transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
 	-ms-transition: opacity 0.2s;

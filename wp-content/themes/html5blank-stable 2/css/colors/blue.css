@@ -35,7 +35,7 @@ ul.nav .dropdown li a.active {
 }
 
 .ms-layer.sldbut1 a {
-	background-color: rgba(49, 131, 215, 0.9);
+	background-color: rgba(49, 131, 215, 0.9)
 }
 .ms-layer.sldbut1 a:hover {
 	color: #3183d7;
