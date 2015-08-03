@@ -7,6 +7,8 @@
 	margin: auto;
 }
 
+
+
 .logo {
 	width: 32%;
 }
@@ -98,6 +100,12 @@
 	margin: auto;
 }
 
+.header-menu ul li {
+	display: block;
+}
+.header-menu ul li a {
+	color: #fff;
+}
 .logo {
 	width: 45%;
 }
@@ -234,6 +242,13 @@
 	margin: auto;
 }
 
+.header-menu ul li {
+	display: block;
+}
+.header-menu ul li a {
+	color: #fff;
+}
+
 .content_left {
 	float: left;
 	width: 100%;
@@ -303,7 +318,7 @@
 
 #trueHeader #logo{
 	text-align: center;
-	background:url(../images/logo.png) no-repeat center bottom;
+	background:url(../images/logo.svg) no-repeat center bottom;
 }
 #trueHeader .logo {
 	width: 100%;
@@ -312,7 +327,7 @@
 }
 
 #topHeader #logo3{
-	background:url(../images/logo.png) no-repeat center top;
+	background:url(../images/logo.svg) no-repeat center top;
 }
 
 .logo4 {
@@ -556,6 +571,8 @@
 
 @media only screen and (max-width: 479px){
 
+
+
 .container {
 	width: 300px;
 	margin: auto;
@@ -629,7 +646,7 @@
 
 #trueHeader #logo{
 	text-align: center;
-	background:url(../images/logo.png) no-repeat center bottom;
+	background:url(../images/logo.svg) no-repeat center bottom;
 }
 #trueHeader .logo {
 	width: 100%;
@@ -638,7 +655,7 @@
 }
 
 #topHeader #logo3{
-	background:url(../images/logo.png) no-repeat center top;
+	background:url(../images/logo.svg) no-repeat center top;
 }
 
 .logo4 {
@@ -666,10 +683,16 @@
 }
 
 .top_nav .left {
+	display: none;
 	width: 35%;
 }
 .top_nav .right {
-	width: 65%;
+	width: 100%;
+	text-align: center;
+	float: none;
+}
+.topsitesearch {
+	display: none;
 }
 .top_nav .right strong {
 	margin-right: 0px;
@@ -713,6 +736,12 @@
 	margin: 0px 1px 0px 0px;
 }
 
+.header-menu ul li {
+	display: block;
+}
+.header-menu ul li a {
+	color: #fff;
+}
 
 .feature_sec2 .one_fourth {
 	width: 100%;
