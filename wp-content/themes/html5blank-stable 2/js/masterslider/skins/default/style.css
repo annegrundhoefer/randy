@@ -21,6 +21,15 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
+
+.ms-layer.text1 p {
+  color: #fff;
+  font-size: 90px;
+  line-height: 75px;
+  font-family: 'Droid Serif', serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 .ms-layer.text1.small {
 	font-size: 72px;
 	line-height: 65px;

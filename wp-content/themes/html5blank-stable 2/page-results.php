@@ -134,7 +134,7 @@
                             while ( $results->have_posts() ) {
                                 $results->the_post();
                                 
-                                echo get_the_title();
+                                echo '<br>' . get_the_title();
                             }
                         } else {
                                 // no posts found

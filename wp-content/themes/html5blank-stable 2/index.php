@@ -27,7 +27,7 @@
                 $slides->the_post(); 
 
                 $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-                $title = get_the_title();
+                $title = get_field('formatted_title',$post->ID);
                 $desc = get_the_content();
                 ?>
         
@@ -215,7 +215,7 @@
             
                     ?>
 
-                    <p><?php echo get_the_excerpt() ?></p>
+                    <p><?php echo get_the_title() ?></p>
                 
                     <div class="divider_line22"></div>
 

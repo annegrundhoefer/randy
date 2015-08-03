@@ -49,15 +49,29 @@
     
     	<div class="sidebar_title"><h4>Practice<i> Areas</i></h4></div>
 		<ul class="arrows_list1">		
-            <li><a href="#"><i class="fa fa-caret-right"></i> Economics</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Social Media</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Economics</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Online Gaming</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Entertainment</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Technology</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Make Money Online</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Photography</a></li>
-            <li><a href="#"><i class="fa fa-caret-right"></i> Web Tutorials</a></li>
+        <?php 
+
+            $args = array(
+                'post_type' => 'ri_areas',
+                'posts_per_page' => '-1',
+                'order' => 'ASC'
+            );
+            
+            $areas = new WP_Query( $args );
+            
+            if ( $areas->have_posts() ) {
+                while ( $areas->have_posts() ) {
+                    $areas->the_post();
+            
+                    echo '<li><a href="#"><i class="fa fa-caret-right"></i> ' . get_the_title() . '</a></li>';
+            
+                }
+            } else {
+                    // no posts found
+            }
+            wp_reset_postdata();
+            
+        ?>
 		</ul>
         
 	</div><!-- end section -->
