@@ -203,7 +203,7 @@ $banner = get_field('about_page_banner', $post->ID);
                     ?>
                 
                      <li>
-                        <a href="<?php echo $permalink ?>"><?php echo $title ?></span></a>
+                        <span><?php echo $title ?></span>
                         <div class="st-content">
                             <p><?php echo $excerpt ?></p>
                         </div>
@@ -218,6 +218,7 @@ $banner = get_field('about_page_banner', $post->ID);
             ?>
             
 		</ul>
+        <a href="/results" class="button4"><strong>All Cases &amp; Results</strong></a>
     	</div>
 
 	</div><!-- end all section -->

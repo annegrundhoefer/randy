@@ -66,13 +66,14 @@
         </ul>
          
         <div class="tabs-content2 fullw">
-        
+
         <?php 
 
             $newCount = 1;
 
             foreach ($categories as $cat) {
                 echo '<div id="example-2-tab-' . $newCount . '" class="tabs-panel2">';
+                echo '<table><tbody>';
                 $newCount++;
 
                 $monthIdObj = get_category_by_slug('dates'); 
@@ -95,6 +96,8 @@
                 ); 
                 
                 $years = get_categories( $args );
+
+
 
                 foreach ($years as $year) {
                     
@@ -119,7 +122,7 @@
                     $months = get_categories( $args );
 
                     foreach ($months as $month) {
-                        echo '<h4>' . $month->cat_name . ' ' . $year->cat_name . '</h4>';
+                        echo '<tr><td>' . $month->cat_name . ' ' . $year->cat_name . '</td><td><td>' . $cat->cat_name . '</td><td>';
 
                         $args = array(
                             'post_type' => 'post',
@@ -134,16 +137,19 @@
                             while ( $results->have_posts() ) {
                                 $results->the_post();
                                 
-                                echo '<br>' . get_the_title();
+                                echo get_the_title() . '<br>';
                             }
                         } else {
                                 // no posts found
                         }
                         wp_reset_postdata();
+
+                        echo '</td></tr>';
                         
                     }
 
                 }
+                echo '</tbody></table>';
                 echo '</div>';
 
             }
