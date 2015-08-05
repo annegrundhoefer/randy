@@ -112,7 +112,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     <div class="one_third last">
     <div class="graybgraph_box">
     	
-        <h3>Bar Admissions</h3>
+        <h3><span class="smaller">State Bar Admissions & Specializations</span></h3>
         
         <?php echo $bar_admissions_body ?>
 	</div>

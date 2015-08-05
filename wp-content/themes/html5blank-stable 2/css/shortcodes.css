@@ -2939,6 +2939,13 @@ ul.list9 {
 	background: url(../images/graph2.png) no-repeat center top;
 	margin-bottom: 20px;
 }
+
+.graybgraph_box h3 .smaller {
+	color: #fff;
+	font-size: 18px;
+	vertical-align: middle;
+	background: url(../images/graph2.png) no-repeat center top;
+}
 .graybgraph_box ul {
 	float: left;
 	padding: 0px;
