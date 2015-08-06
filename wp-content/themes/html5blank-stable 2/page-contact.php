@@ -7,7 +7,7 @@
 <div class="content_fullwidth less">
 
 <div class="one_full">
-	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4303%20North%20Central%20Expressway%2C%20Dallas%2C%20TX%2075205%2C%20United%20States&amp;key=AIzaSyD0nUVnQXWvQ387l6ZOktC0Y0SO5goPdg0"></iframe>
+	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4303%20North%20Central%20Expressway%2C%20Dallas%2C%20TX%2075205%2C%20United%20States&amp;key=AIzaSyA0RtOFC5OKwLiE4SXhdCjFUTK_amKeoLw"></iframe>
 </div><!-- end google map -->
 
 <div class="clearfix margin_top4"></div>

@@ -36,7 +36,7 @@
          
                             <img src="<?php echo $url ?>" data-src="<?php echo $url ?>" alt="<?php echo $title ?>"/>     
                             
-                             <img src="<?php echo $url ?>" data-src="<?php bloginfo('template_url'); ?>/images/rrr.jpg" alt="" class="ms-layer"
+                             <img src="<?php echo $url ?>" data-src="<?php bloginfo('template_url'); ?>/images/randy2.png" alt="" class="ms-layer"
                                 style="bottom:0; right:120px"
                                 data-effect="right(72)"
                                 data-delay="0"
