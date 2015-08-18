@@ -34,10 +34,10 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     <ul class="ctdet">
     	<li><i class="fa fa-phone-square"></i> <?php echo $attorney_info_phone_number ?></li>
         <li><i class="fa fa-fax"></i> <?php echo $attorney_info_fax_number ?></li>
-        <li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $attorney_info_email ?>"><?php echo $attorney_info_email ?></a></li>
+       
     </ul>
     
-    <p><a href="<?php echo $attorney_info_email ?>" class="button5">Send an Email</a></p>
+    <p><a href="<?php echo $contact_email ?>" class="button5">Send an Email</a></p>
    	
     
     <ul class="csocial">
