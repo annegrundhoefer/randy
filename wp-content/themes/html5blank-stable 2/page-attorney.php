@@ -37,13 +37,12 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
         <li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $attorney_info_email ?>"><?php echo $attorney_info_email ?></a></li>
     </ul>
     
-    <p><a href="#" class="button5">Download vCard</a> &nbsp;&nbsp; <a href="<?php echo $attorney_info_email ?>" class="button5">Send an Email</a></p>
+    <p><a href="<?php echo $attorney_info_email ?>" class="button5">Send an Email</a></p>
    	
     
     <ul class="csocial">
-    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+    	<li><a href="https://www.facebook.com/randall.isenberg.9" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/pub/randall-isenberg/21/737/a56" target="_blank"><i class="fa fa-linkedin"></i></a></li>
     </ul>
     
 </div>
@@ -130,7 +129,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     
     <div class="one_half last">
     
-    	<div class="videofrafull"><iframe src="http://www.youtube.com/embed/03M7n8bMscM?wmode=transparent&amp;wmode=transparent"></iframe></div>
+    	<div class="videofrafull"><iframe src="https://www.youtube.com/embed/6Q9xbk779ZM"></iframe></div>
     
     </div><!-- end section -->
 

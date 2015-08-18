@@ -140,7 +140,7 @@
 
 	<div class="one_half">Copyright © <?php echo the_date('Y'); ?> Law Offices of Randall B. Isenberg. All Rights Reserved</div>
 	
-    <div class="one_half last"><a href="#">Notices</a> | <a href="#">Privacy Policy</a> | <a href="#">Careers</a> | <a href="#">Site Map</a></div>
+    <div class="one_half last"><a href="<?php bloginfo('template_url'); ?>/privacypolicy">Privacy Policy</a> | <a href="<?php bloginfo('template_url'); ?>/disclaimer">Disclaimer</a></div>
     
     
 </div>

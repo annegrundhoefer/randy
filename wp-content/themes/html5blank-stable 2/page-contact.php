@@ -7,7 +7,7 @@
 <div class="content_fullwidth less">
 
 <div class="one_full">
-	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4303%20North%20Central%20Expressway%2C%20Dallas%2C%20TX%2075205%2C%20United%20States&amp;key=AIzaSyA0RtOFC5OKwLiE4SXhdCjFUTK_amKeoLw"></iframe>
+	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4303%20North%20Central%20Expressway%2C%20Dallas%2C%20TX%2075205%2C%20United%20States&amp;key=AIzaSyDZDmnkQ9oQZmyq_z8d8CRh3FfZovAS3F0"></iframe>
 </div><!-- end google map -->
 
 <div class="clearfix margin_top4"></div>
@@ -76,9 +76,9 @@
           <ul>
             <li> <strong>The Law Offices of Randall B. Isenberg</strong><br />
               4303 North Central Expressway Dallas, TX 75205 <br />
-              Telephone: (214) 696-9253<br />
-              FAX: (214) 696-0867<br />
-              E-mail: <a href="mailto:mail@companyname.com">mail@companyname.com</a><br />
+              Phone Number: (214) 696-9253<br />
+              Fax Number: (214) 696-0867<br />
+              E-mail: <a href="law@randallisenberg.com">mlaw@randallisenberg.com</a><br />
                </li>
           </ul>
           

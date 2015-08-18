@@ -227,8 +227,8 @@ $banner = get_field('about_page_banner', $post->ID);
     	
         <h3>Play <strong>Videos</strong></h3>
         
-    	<iframe src="http://www.youtube.com/embed/VT_3xtI2kvM?wmode=transparent" class="videofra"></iframe>
-    
+    	<iframe src="https://www.youtube.com/embed/6Q9xbk779ZM" class="videofra"></iframe>
+
     </div>
 
 </div>

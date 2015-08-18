@@ -644,15 +644,17 @@
 	margin-bottom: 0 !important;
 }
 
-#trueHeader #logo{
+#trueHeader #logo a{
 	text-align: center;
 	background:url(../images/logo.svg) no-repeat center bottom;
+	float: none;
 }
 #trueHeader .logo {
 	width: 100%;
 	margin-bottom: 5px;
 	text-align: center;
 }
+
 
 #topHeader #logo3{
 	background:url(../images/logo.svg) no-repeat center top;

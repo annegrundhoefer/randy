@@ -123,10 +123,8 @@
             
             	<ul class="topsocial">
                     <li><a href="<?php echo $facebook ?>"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="<?php echo $twitter ?>"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="<?php echo $google_plus ?>"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="<?php echo $youtube ?>"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="<?php echo $rss ?>"><i class="fa fa-rss"></i></a></li>
                 </ul>
             
             </div><!-- end left links -->
