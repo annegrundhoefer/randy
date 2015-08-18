@@ -37,7 +37,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
        
     </ul>
     
-    <p><a href="<?php echo $contact_email ?>" class="button5">Send an Email</a></p>
+    <p><a href="mailto:<?php echo $contact_email ?>" class="button5">Send an Email</a></p>
    	
     
     <ul class="csocial">
