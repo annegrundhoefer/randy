@@ -78,7 +78,7 @@
               4303 North Central Expressway Dallas, TX 75205 <br />
               Phone Number: (214) 696-9253<br />
               Fax Number: (214) 696-0867<br />
-              E-mail: <a href="law@randallisenberg.com">mlaw@randallisenberg.com</a><br />
+              E-mail: <a href="law@randallisenberg.com">law@randallisenberg.com</a><br />
                </li>
           </ul>
           
