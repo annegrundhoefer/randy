@@ -151,7 +151,7 @@ $banner = get_field('about_page_banner', $post->ID);
                                <?php echo $testimonial ?>
                             </div>
                             
-                            <div class="peoimg"><img src="<?php echo $url ?>" alt="" /> <strong>- <?php echo $title ?></strong></div>
+                            
                                
                         </div><!-- end section -->
 

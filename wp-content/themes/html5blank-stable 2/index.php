@@ -277,11 +277,10 @@
     
                             <div>
             
-                            <img src="<?php echo $url ?>" alt="" />
+                            
                                 
                                 <p><?php echo $content; ?></p>
                                 
-                                <b>- <?php echo $title ?></b>
                                 
                                 <div class="divider_line21 last"></div>
                                 
@@ -330,12 +329,8 @@
                              
     
                             <div>
-            
-                            <img src="<?php echo $url ?>" alt="" />
                                 
                                 <p><?php echo $content; ?></p>
-                                
-                                <b>- <?php echo $title ?></b>
                                 
                                 <div class="divider_line21 last"></div>
                                 
