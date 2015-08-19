@@ -22,11 +22,12 @@
             <div class="blog_postcontent">
             <div class="image_frame">
             <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 				</a>
 			<?php endif; ?>
 			</div>
-            <h3><?php the_title(); ?></h3>
+            
              <div class="clearfix"></div>
              <div class="margin_top1"></div>
             <p><?php the_content(); ?></p>
