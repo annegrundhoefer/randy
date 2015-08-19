@@ -13,7 +13,7 @@ $banner = get_field('about_page_banner', $post->ID);
 
 ?>
 
-<div class="page_title" style="background-image: url('<?php echo $url ?>') no-repeat center top;">
+<div class="page_title" style="background-image: url('<?php echo $url ?>') no-repeat center top !important;">
 <div class="container">
 	
     <h1><?php echo get_the_title(); ?></h1>
