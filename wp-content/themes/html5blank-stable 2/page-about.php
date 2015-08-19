@@ -144,7 +144,7 @@ $banner = get_field('about_page_banner', $post->ID);
 
                     ?>
 
-                        <div>
+                       <div>
             
                             <div class="peoplesays">
                             
