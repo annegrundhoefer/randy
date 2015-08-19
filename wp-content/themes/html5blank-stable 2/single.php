@@ -62,7 +62,7 @@
                 while ( $areas->have_posts() ) {
                     $areas->the_post();
             
-                    echo '<li><a href="#"><i class="fa fa-caret-right"></i> ' . get_the_title() . '</a></li>';
+                    echo '<li><a href="' . get_the_permalink() . '"><i class="fa fa-caret-right"></i> ' . get_the_title() . '</a></li>';
             
                 }
             } else {
