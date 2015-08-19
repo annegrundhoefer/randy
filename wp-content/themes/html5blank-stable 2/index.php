@@ -67,7 +67,7 @@
                                 data-duration="2000"
                                 data-delay="500"
                                 data-ease="easeOutExpo"
-                            ><a href="<?php bloginfo('template_url'); ?>/attorneys">Learn More</a></div>
+                            ><a href="<?php echo site_url(); ?>/attorneys">Learn More</a></div>
                                     
                         </div><!-- end slide -->
 
