@@ -29,7 +29,6 @@
 			</div>
             
              <div class="clearfix"></div>
-             <div class="margin_top1"></div>
             <p><?php the_content(); ?></p>
             </div>
         </div><!-- /# end post -->
@@ -78,16 +77,7 @@
     
     
     
-    <div class="clearfix margin_top4"></div>
-    
-    <div class="clientsays_widget">
-    
-    	<div class="sidebar_title"><h4>Our <i>Clients</i></h4></div>
-        
-        <img src="http://placehold.it/50x50" alt="" />
-			<strong>- Michle Siminson</strong><p>Lorem Ipsum passage, and going through the cites of the word here classical literature passage discovere there undou btable source looks reasonable the generated charac eristic words.</p>  
-                
-	</div><!-- end section -->
+   
   </div>
 </div><!-- end right sidebar -->
 		</div>
