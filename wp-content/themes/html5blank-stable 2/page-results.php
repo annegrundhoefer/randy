@@ -122,31 +122,48 @@
                     $months = get_categories( $args );
 
                     foreach ($months as $month) {
-                        echo '<tr><td>' . $month->cat_name . ' ' . $year->cat_name . '</td><td><td>' . $cat->cat_name . '</td><td>';
 
-                        $args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => '-1',
-                            'category__and' => array($month->term_id, $year->term_id, $cat->term_id),
-                            'order' => 'DESC'
-                        );
-                        
-                        $results = new WP_Query( $args );
-
-                        if ( $results->have_posts() ) {
-                            while ( $results->have_posts() ) {
-                                $results->the_post();
-                                
-                                echo get_the_title() . '<br>';
-                            }
-                        } else {
-                                // no posts found
+                        if ($month->cat_name == 'January') {
+                            echo '<div class="third">';
                         }
-                        wp_reset_postdata();
 
-                        echo '</td></tr>';
+                        if ($month->cat_name == 'May') {
+                            echo '</div><div class="third">';
+                        }
+
+                        if ($month->cat_name == 'September') {
+                            echo '</div><div class="third">';
+                        }
+
                         
+                        
+                            echo '<h3 style="margin-bottom: 8px; margin-top: 32px;">' . $month->cat_name . ' ' . $year->cat_name . '</h3>';
+
+                            $args = array(
+                                'post_type' => 'post',
+                                'posts_per_page' => '-1',
+                                'category__and' => array($month->term_id, $year->term_id, $cat->term_id),
+                                'order' => 'DESC'
+                            );
+                            
+                            $results = new WP_Query( $args );
+
+                            if ( $results->have_posts() ) {
+                                while ( $results->have_posts() ) {
+                                    $results->the_post();
+                                    
+                                    echo '<p>' . get_the_title() . '<br>';
+                                }
+                            } else {
+                                    // no posts found
+                            }
+                            wp_reset_postdata();
+
+                            echo '</p>';
+                       
                     }
+
+                    echo '</div>';
 
                 }
                 echo '</tbody></table>';
