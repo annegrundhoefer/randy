@@ -1,13 +1,12 @@
 <?php /* Template Name: Contact Page */ get_header(); ?>
 
-
-
 <div class="clearfix"></div>
 
 <div class="content_fullwidth less">
 
 <div class="one_full">
-	<iframe class="google-map2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4303%20North%20Central%20Expressway%2C%20Dallas%2C%20TX%2075205%2C%20United%20States&amp;key=AIzaSyDZDmnkQ9oQZmyq_z8d8CRh3FfZovAS3F0"></iframe>
+  <!-- <div id="map-canvas"></div> -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:100%;"><div id="gmap_canvas" style="height:500px;width:100%;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.themecircle.net" id="get-map-data">premium wordpress themes</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(32.8175451,-96.78907179999999),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(32.8175451, -96.78907179999999)});infowindow = new google.maps.InfoWindow({content:"<b>The Law Offices of Randall B. Isenberg</b><br/>4303 North Central Expressway<br/>75205 Dallas" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
 </div><!-- end google map -->
 
 <div class="clearfix margin_top4"></div>
