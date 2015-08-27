@@ -133,14 +133,7 @@
                 
                 Call Us: <span class="red"><strong><?php echo $contact_phone_number ?></strong></span>       
                 
-            <div class="topsitesearch">
-                <form method="get" id="topsitesearchform" action="index.html">
-                    <div>
-                    <input class="input-text" name="s" id="s" value="Search..." onFocus="if (this.value == 'Search...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Search...';}" type="text" />
-                    <input id="searchsubmit" value="Search" type="submit" />
-                    </div>
-                </form>
-            </div><!-- end site search -->
+          
             
             
         </div><!-- end right links -->
