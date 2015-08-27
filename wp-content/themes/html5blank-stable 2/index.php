@@ -377,7 +377,7 @@
 	
 	<div class="title11">
     
-    	<h2 class="white">Practice <strong>Areas</strong>
+    	<h2 class="small">Practice <strong>Areas</strong>
         <span class="line2"></span></h2>
         
 	</div>
