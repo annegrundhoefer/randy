@@ -201,7 +201,7 @@
   float: left;
   width: 70%;
   color: #454545;
-  font-size: 20px;
+  font-size: 18px;
   text-align: right;
 }
 .top_nav .right span {
@@ -1480,7 +1480,7 @@
   padding: 0px;
   margin: 7px 0px;
   font-size: 16px;
-  color: #000;
+  color: #fff;
 }
 .full_biohead .ctdet li i {
   margin-right: 7px;
@@ -2258,4 +2258,7 @@ ul.recent_posts_list {
   text-indent: -9999px;
   background: url(../images/scroll-top-arrow.png) no-repeat left top;
   z-index: 999;
+}
+table td {
+  padding: 8px;
 }
