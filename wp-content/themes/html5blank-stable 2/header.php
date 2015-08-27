@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/styles.css" type="text/css" />
     
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- animations -->
     <link href="<?php bloginfo('template_url'); ?>/js/animations/css/animations.min.css" rel="stylesheet" type="text/css" media="all" />
