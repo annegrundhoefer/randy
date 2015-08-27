@@ -261,6 +261,8 @@
                     'post_type' => 'ri_testimonials',
                     'posts_per_page' => -1,
                 );
+
+                $count = 1;
                 
                 $testimonials = new WP_Query( $args );
                 
@@ -271,6 +273,8 @@
                         $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                         $content = get_the_content();
                         $title = get_the_title(); 
+
+                        if ($count % 2 === 0)  {
 
                         ?>
                              
@@ -288,6 +292,8 @@
                     
                         
                         <?php
+                        }
+                        $count++;
                     }
                 } else {
 
@@ -316,7 +322,9 @@
                 );
                 
                 $testimonials = new WP_Query( $args );
-                
+                    
+                $countnext = 1;
+
                 if ( $testimonials->have_posts() ) {
                     while ( $testimonials->have_posts() ) {
                         $testimonials->the_post(); 
@@ -324,6 +332,8 @@
                         $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                         $content = get_the_content();
                         $title = get_the_title(); 
+
+                        if ($countnext % 2 !== 0)  {
 
                         ?>
                              
@@ -338,6 +348,8 @@
                     
                         
                         <?php
+                        }
+                        $countnext++;
                     }
                 } else {
 
