@@ -147,7 +147,7 @@
 	
     <p><?php echo $main_text_body ?></p>
         
-    <h5>Get your Free Consultation <strong class="animate" data-anim-type="fadeIn" data-anim-delay="300"><?php echo $contact_phone_number ?> </strong> Available 24/7 </h5>
+    <h5>Get your Free Consultation <strong class="animate" data-anim-type="fadeIn" data-anim-delay="300"><a href="tel:+12146969253"><?php echo $contact_phone_number ?></a> </strong> Available 24/7 </h5>
     
 </div>
 </div><!-- end features section 1 -->

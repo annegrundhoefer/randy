@@ -110,8 +110,8 @@
     
         <div class="left animate" data-anim-type="fadeInLeft" data-anim-delay="300">
         
-            <h5>Get Free Consultation</h5>
-            <h6>Available 24/7</h6>
+            <h5>Get a Free Consultation</h5>
+            <h6>Available 24/7 <br> Se Habla Español</h6>
             <h3><?php echo $contact_phone_number ?></h3>
             
         </div><!-- end section -->

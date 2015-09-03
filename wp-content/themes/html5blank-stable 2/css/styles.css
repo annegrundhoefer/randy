@@ -216,6 +216,11 @@
   margin-right: 20px;
   font-weight: 600;
 }
+
+.top_nav .right .top {
+  margin-right: 20px;
+  font-size: 12px;
+}
 .top_nav .right a {
   color: #454545;
   font-weight: 600;
@@ -260,7 +265,7 @@
 .top_nav ul.topsocial {
   float: left;
   padding: 0px;
-  margin: 0px;
+  margin: 10px 0px 0px 0px;
 }
 .top_nav .topsocial li {
   float: left;
@@ -270,14 +275,14 @@
 .top_nav .topsocial li a {
   float: left;
   color: #8e8e8e;
-  font-size: 12px;
-  width: 23px;
-  height: 23px;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
   background: #fbfbfb;
   border-radius: 100%;
   text-align: center;
   vertical-align: middle;
-  line-height: 23px;
+  line-height: 30px;
   transition: all 0.3s ease;
 }
 .top_nav .topsocial li a:hover {
@@ -591,15 +596,6 @@
   width: 100%;
   text-align: center;
   padding: 90px 0px 80px 0px;
-  background: url("../images/books.jpg");
-  background-attachment: fixed;
-  background-origin: initial;
-  background-clip: initial;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  background-position: center;
-  position: relative;
   box-shadow: inset 0px 8px 5px -7px #eeeeee, inset 0px -8px 5px -7px #eeeeee;
 }
 .feature_sec4.two {
@@ -1148,6 +1144,7 @@
 .footer h3 {
   color: #fff;
   margin-bottom: 0px;
+  font-size: 24px;
 }
 .footer .left {
   float: left;

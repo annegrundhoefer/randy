@@ -131,7 +131,8 @@
             
             <div class="right">
                 
-                Call Us: <span class="red"><strong><?php echo $contact_phone_number ?></strong></span>       
+                Call Us: <span class="red"><strong><?php echo $contact_phone_number ?></strong></span> 
+                      <p class="top">Available 24/7 | Se Habla Español</p>
                 
           
             
