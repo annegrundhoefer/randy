@@ -544,8 +544,8 @@ div.ms-layer.text2 {
 }
 
 .ms-layer.text1 p {
-	font-size: 30px;
-	line-height: 30px;
+	font-size: 30px !important;
+	line-height: 30px !important;
 }
 .feature_sec1 h5 {
 	line-height: 40px;
@@ -692,7 +692,7 @@ strong.animate.fadeIn {
 .menu_main {
 	float: none;
 	width: 90%;
-	margin: 0 auto;
+	margin: 85px 0px 10px 20px;
 }
 
 .top_nav .left {
