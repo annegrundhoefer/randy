@@ -351,15 +351,20 @@
 .menu_main {
 	float: none;
 	width: 90%;
-	margin: 0 auto;
+	margin: 85px 0px 10px 20px;
+}
+
+div.ms-layer.text2 {
+	display: none;
 }
 
 .top_nav .left {
 	width: 100%;
+	display:none;
 }
 .top_nav .right {
 	width: 100%;
-	text-align: left;
+	text-align: center;
 }
 .topsitesearch {
 	margin: 0px 0px 0px 0px;
@@ -538,11 +543,17 @@
 	margin-right: 0%;
 }
 
-
+.ms-layer.text1 p {
+	font-size: 30px;
+	line-height: 30px;
+}
 .feature_sec1 h5 {
 	line-height: 40px;
 }
 
+strong.animate.fadeIn {
+	padding: 10px 40px 10px 40px;
+}
 
 .feature_sec3 .hpeosays img {
 	margin-bottom: 0px;
