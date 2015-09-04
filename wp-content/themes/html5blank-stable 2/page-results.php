@@ -21,10 +21,9 @@
         
             <div id="demo-tab-1" class="tabs-panel bgimg1">
 	
-    
     <p class="big_text3"><?php echo get_the_content(get_the_ID()); ?></p>
    
-
+ 
     	</div><!-- end all tabs -->
 
         
@@ -64,8 +63,11 @@
             ?>
 
         </ul>
-         
+        
         <div class="tabs-content2 fullw">
+            <div class="viewall">
+            <a href="#" target="_blank"><span class="big_text1 color">View All Results</span></a>
+            </div>
 
         <?php 
 
@@ -163,9 +165,12 @@
                        
                     }
 
+
                     echo '</div>';
 
                 }
+
+
                 echo '</tbody></table>';
                 echo '</div>';
 

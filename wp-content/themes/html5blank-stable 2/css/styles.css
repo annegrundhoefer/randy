@@ -190,6 +190,9 @@
   text-indent: -999em;
   background: url(../images/logo4.png) no-repeat center top;
 }
+.viewall  {
+  display: block !important;
+}
 /* top navigation */
 .top_nav {
   float: left;
