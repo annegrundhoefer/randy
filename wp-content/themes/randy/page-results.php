@@ -65,16 +65,16 @@
         </ul>
         
         <div class="tabs-content2 fullw">
-            <div class="viewall">
-            <a href="#" target="_blank"><span class="big_text1 color">View All Results</span></a>
-            </div>
+            
 
         <?php 
 
             $newCount = 1;
 
             foreach ($categories as $cat) {
+
                 echo '<div id="example-2-tab-' . $newCount . '" class="tabs-panel2">';
+                echo '<div class="viewall"><a href="' . home_url() . '/' . $cat->slug . '"><span class="big_text1 color">View All Results</span></a></div>';
                 echo '<table><tbody>';
                 $newCount++;
 

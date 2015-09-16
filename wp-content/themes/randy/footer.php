@@ -28,8 +28,6 @@
                 $contact_address = get_field('contact_address',$post_id);
                 $contact_email = get_field('contact_email', $post_id);
 
-
-            
             }
         } else {
                 // no posts found
@@ -49,7 +47,7 @@
     
     <div class="cforms">
         
-        <form action="demo-contacts.php" method="post" id="sky-form" class="sky-form">
+        <form action="<?php echo bloginfo('template_url'); ?>/demo-contacts.php" method="post" id="sky-form" class="sky-form">
           <fieldset>
             <div class="row">
             

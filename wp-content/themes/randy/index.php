@@ -430,14 +430,14 @@
             }
             wp_reset_postdata();
 
-            ?>
+            ?>w
                
         </ul>
     </div>
      
-    <div class="cbp-l-loadMore-text">
-        <div data-href="<?php bloginfo('template_url'); ?>ajax/loadMore.html" class="cbp-l-loadMore-text-link"></div>
-    </div>
+    <!-- <div class="cbp-l-loadMore-text">
+        <div data-href="<?php //bloginfo('template_url'); ?>/ajax/loadMore.html" class="cbp-l-loadMore-text-link"></div>
+    </div> -->
     
 </div>
 </div><!-- end features section 2 -->

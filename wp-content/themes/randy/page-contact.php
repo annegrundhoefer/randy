@@ -20,7 +20,7 @@
         
         <div class="cforms">
         
-        <form action="demo-contacts.php" method="post" id="sky-form" class="sky-form">
+        <form action="<?php bloginfo('template_url'); ?>/demo-contacts.php" method="post" id="sky-form" class="sky-form">
           <header>Send Us a <strong>Message!</strong></header>
           <fieldset>
             <div class="row">
